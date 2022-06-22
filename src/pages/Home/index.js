@@ -6,13 +6,13 @@ export default class Home extends Component {
   render () {
     return (
       <article className="home">
-        <h1>Boas-vindas!</h1>
+        <h1>VanR Calc</h1>
         <p>Escolha uma calculadora e divirta-se!</p>
-        <ul className="navigation">
-          <li><Link to="/imc-calculator">Calculadora de IMC</Link></li>
-          <li><Link to="/gestational-age-calculator">Calculadora de idade gestacional</Link></li>
-          <li><Link to="/regular-calculator">Calculadora simples</Link></li>
-        </ul>
+        <div className="navigation">
+          <Link to="/imc-calculator" className="link">Calculadora de IMC</Link>
+          <Link to="/gestational-age-calculator" className="link">Calculadora de idade gestacional</Link>
+          <Link to="/regular-calculator" className="link">Calculadora simples</Link>
+        </div>
       </article>
     );
   }
