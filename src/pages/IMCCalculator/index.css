@@ -1,3 +1,48 @@
+.imc-calculator-container {
+  height: 100%;
+  overflow: scroll;
+  width: 100%;
+}
+
+.imc-calculator-container h1 {
+  font-size: 3rem;
+}
+
+.imc-calculator-container p {
+  margin: 12px auto;
+  text-align: justify;
+  max-width: 600px;
+  width: 90%;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 16px auto;
+  width: 360px;
+}
+
+form input {
+  background-color: rgba(196, 196, 196, 0.5);
+  border-radius: 8px;
+  height: 32px;
+  margin: 0 4px;
+  outline: none;
+  width: 40px;
+}
+
+form button {
+  background-color: rgb(20, 12, 12);
+  border-radius: 8px;
+  color: rgb(197, 197, 197);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin: 12px auto;
+  padding: 16px;
+  width: 100%;
+}
+
 .table {
   background-color: rgba(196, 196, 196, 0.5);
   border-radius: 8px;
