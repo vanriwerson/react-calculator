@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class IMCForm extends Component {
   render () {
-    const {weight, height, onInputChange, onButtonClick } = this.props;
+    const { weight, height, onInputChange, onButtonClick } = this.props;
 
     return (
       <form>

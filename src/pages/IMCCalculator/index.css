@@ -32,7 +32,7 @@ form input {
   width: 40px;
 }
 
-form button {
+button {
   background-color: rgb(20, 12, 12);
   border-radius: 8px;
   color: rgb(197, 197, 197);
@@ -40,7 +40,18 @@ form button {
   font-weight: bolder;
   margin: 12px auto;
   padding: 16px;
-  width: 100%;
+  width: 360px;
+}
+
+.answer p {
+  font-size: 1.2rem;
+  margin: 12px auto;
+  text-align: center;
+}
+
+.imc-display {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .table {
