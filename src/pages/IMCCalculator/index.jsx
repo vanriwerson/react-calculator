@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import IMCForm from '../../components/IMCForm';
 import IMCTable from '../../components/IMCTable';
 import './index.css';
