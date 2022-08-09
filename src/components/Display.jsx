@@ -12,7 +12,7 @@ const Display = ({ expression, result }) => {
 
 Display.propTypes = {
   expression: PropTypes.string,
-  result: PropTypes.number,
-}
+  result: PropTypes.string,
+}.isRequired;
 
 export default Display;

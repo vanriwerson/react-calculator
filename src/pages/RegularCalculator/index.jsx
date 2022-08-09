@@ -1,15 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
+import { simplifyExpression } from './calculatorLogic';
 import Button from '../../components/Button';
 import Display from '../../components/Display';
 import './index.css';
 
 const RegularCalculator = () => {
-  const generics = ['AC', '()', '%', '7', '8', '9', '4', '5', '6', '1', '2', '3', '+/-', '0', '.'];
+  const generics = ['AC', '(', ')', '7', '8', '9', '4', '5', '6', '1', '2', '3', '←', '0', '.'];
   const operators = ['/', '*', '-', '+', '='];
 
   const [expression, setExpression] = useState('');
-  const [isOperator, setIsOperator] = useState(false);
   const [result, setResult] = useState(0);
 
   const clearDisplay = () => {
@@ -17,18 +17,34 @@ const RegularCalculator = () => {
     setResult(0);
   };
 
+  const backSpace = () => {
+    setExpression(expression.substring(0, expression.length -1));
+  };
+
   const actualizeDisplay = (newInput) => {
-    setExpression((prev) => prev + newInput );
+    setExpression((prev) => prev + newInput);
+    const lastInput = expression.substring(expression.length-1);
+
+    const signs = ['(', ')', '/', '*', '-', '+', '.']
+    const isSign = (input) => signs.some((operator) => operator === input);
+
+    if(isSign(lastInput) && isSign(newInput)) {
+      setExpression(expression);
+    }
   };
 
   const calculateExpression = () => {
-
-  };
+    setResult(simplifyExpression(expression));
+  }
 
   const getInputs = ({ target: { innerText } }) => {
     switch (innerText) {
       case 'AC':
         clearDisplay();
+        break;
+
+      case '←':
+        backSpace();
         break;
 
       case '=':
@@ -43,11 +59,11 @@ const RegularCalculator = () => {
 
   return (
     <main>
-      <h1>Calculadora Silmples</h1>
+      <h1>Calculadora Regular</h1>
       <div className="calculator-container">
         <Display
           expression={ expression }
-          result={ result }
+          result={ result.toString() }
         />
         <div className="generics-wrapper">
           {generics.map((generic, i) => (
@@ -65,7 +81,7 @@ const RegularCalculator = () => {
                 key={ i }
                 label={ operator }
                 additionalClassName="operator"
-                onClickCallback={ (e) => console.log(e.target) }
+                onClickCallback={ (e) => getInputs(e) }          
               />
             ))}
         </div>

@@ -15,7 +15,7 @@
   color: rgb(197, 197, 197);
   display: flex;
   flex-direction: column;
-  height: 90px;
+  height: 100px;
   justify-content: space-between;
   margin: 10px;
   padding: 10px;
@@ -24,6 +24,14 @@
 
 .expression, .result {
   margin: 10px
+}
+
+.expression {
+  line-height: 20px;
+}
+
+.result {
+  line-height: 40px;
 }
 
 .result {
@@ -44,6 +52,10 @@
   width: 90px;
 }
 
+.button:hover {
+  opacity: 0.5;
+}
+
 .generics-wrapper .button,
 .operators-wrapper .button {
   height: 70px;
@@ -51,6 +63,14 @@
   width: 70px;
 }
 
+.generics-wrapper .button:first-child {
+  background-color: rgb(99, 26, 26);
+}
+
 .operators-wrapper .button.operator {
   background-color: rgb(39, 36, 36);
+}
+
+.operators-wrapper .button:last-child {
+  background-color: rgb(47, 95, 49);
 }
